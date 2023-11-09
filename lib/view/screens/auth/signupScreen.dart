@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rapid_reels/constants.dart';
+import 'package:rapid_reels/controller/authController.dart';
 import 'package:rapid_reels/view/widgets/glitch.dart';
 import 'package:rapid_reels/view/widgets/textInput.dart';
 
@@ -30,31 +30,36 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 25),
-              Stack(
-                children: [
-                  const CircleAvatar(
-                    backgroundImage: NetworkImage(
-                      'https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg',
+              InkWell(
+                onTap: () {
+                  AuthController.instance.pickImage();
+                },
+                child: Stack(
+                  children: [
+                    const CircleAvatar(
+                      backgroundImage: NetworkImage(
+                        'https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg',
+                      ),
+                      radius: 60,
                     ),
-                    radius: 60,
-                  ),
-                  Positioned(
-                    bottom: 0,
-                    right: 0,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Icon(
-                          Icons.edit,
-                          color: Colors.black,
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Icon(
+                            Icons.edit,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
               SizedBox(height: 20),
               Container(
@@ -99,7 +104,14 @@ class SignupScreen extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width - 50,
                 margin: const EdgeInsets.symmetric(horizontal: 100),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    AuthController().SignUp(
+                      _usernameController.text,
+                      _emailController.text,
+                      _passwordController.text,
+                      AuthController.instance.proImg,
+                    );
+                  },
                   child: const Text("SignUp"),
                 ),
               ),

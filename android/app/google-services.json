@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "487340642852",
+    "project_id": "shortzy-da8fa",
+    "storage_bucket": "shortzy-da8fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487340642852:android:1f504fa0d7f781ab96beb1",
+        "android_client_info": {
+          "package_name": "com.example.rapid_reels"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKVPMQsIT03T9WJu_i45bVy_9qTlF8Mw8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

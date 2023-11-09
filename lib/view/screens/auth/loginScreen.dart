@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rapid_reels/controller/authController.dart';
 import 'package:rapid_reels/view/widgets/glitch.dart';
 import 'package:rapid_reels/view/widgets/textInput.dart';
 
@@ -49,7 +50,10 @@ class LoginScreen extends StatelessWidget {
                 width: MediaQuery.sizeOf(context).width - 50,
                 margin: const EdgeInsets.symmetric(horizontal: 100),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    AuthController.instance
+                        .login(_emailController.text, _passwordController.text);
+                  },
                   child: const Text("Login"),
                 ),
               ),
